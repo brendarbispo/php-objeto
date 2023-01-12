@@ -1,24 +1,18 @@
 <?php
 
-//criar uma classe
-class Pessoa {
-    //adicionar atributos:
-    public $nome;
-    public $idade;
-    //adc funcao
-    public function Falar(){
-        echo $this->nome." de ".$this->idade." anos, acabou de falar";
+require 'classes/produto.php';
+require 'models/produto.php';
 
-    }
-}
+//busca da pasta referente das duas maneiras::
 
-//cria um novo objeto
-$brenda = new Pessoa();
+$produto = new \classes\Produto();
+$produto->mostrarDetalhes();
 
-// adc informacoes 
-$brenda->idade = 25;
-$brenda->nome = "Brenda Rodrigues";
-//var_dump($brenda);
+//////////// OU
+use models\Produto;
 
-// executar funçao: 
-$brenda->Falar();
+$produto = new Produto;
+$produto->mostrarDetalhes();
+
+//pode se dar um apelido usando 'as'
+//$produto = new \classes\Produto() as ProductClass;
